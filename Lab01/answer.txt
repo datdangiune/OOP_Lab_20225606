@@ -1,0 +1,5 @@
+1.
+When users choose "Cancel", the screen will display as if users selected "No".
+2.
+Change to:
+int option = JOptionPane.showConfirmDialog(null, "Yes", "No", JOptionPane.YES_NO_OPTION);
