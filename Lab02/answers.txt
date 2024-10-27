@@ -1,0 +1,2 @@
+
+No, Java does not allow you to create two constructors that only differ in parameter names. This is because Java determines the correct constructor to call based on the number and type of parameters, not their names.
