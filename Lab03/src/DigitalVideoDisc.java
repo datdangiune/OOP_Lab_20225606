@@ -5,34 +5,45 @@ public class DigitalVideoDisc {
     private String director;
     private int length;
 
+    private static int nbDigitalVideoDiscs = 0;
+
+    private int id;
+
     public DigitalVideoDisc(String title) {
         this.title = title;
+        nbDigitalVideoDiscs++; 
+        this.id = nbDigitalVideoDiscs; 
     }
+
 
     public DigitalVideoDisc(String category, String title, double cost) {
         this.category = category;
         this.title = title;
         this.cost = cost;
+        nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
     }
 
+  
     public DigitalVideoDisc(String director, String category, String title, double cost) {
         this.director = director;
         this.category = category;
         this.title = title;
         this.cost = cost;
+        nbDigitalVideoDiscs++;
+        this.id = nbDigitalVideoDiscs;
     }
 
-    public DigitalVideoDisc(String title, String category, String director, int length, double cost) {
-        this.title = title;
-        this.category = category;
-        this.director = director;
-        this.length = length;
-        this.cost = cost;
+
+    public int getId() {
+        return id;
     }
+
 
     public String getTitle() {
         return title;
     }
+
 
     public void setTitle(String title) {
         this.title = title;
@@ -41,7 +52,7 @@ public class DigitalVideoDisc {
     public String getCategory() {
         return category;
     }
-    
+
     public void setCategory(String category) {
         this.category = category;
     }
@@ -53,6 +64,7 @@ public class DigitalVideoDisc {
     public void setCost(double cost) {
         this.cost = cost;
     }
+
     public String getDirector() {
         return director;
     }
@@ -60,8 +72,16 @@ public class DigitalVideoDisc {
     public void setDirector(String director) {
         this.director = director;
     }
-    
+
     public int getLength() {
         return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public static int getNbDigitalVideoDiscs() {
+        return nbDigitalVideoDiscs;
     }
 }
