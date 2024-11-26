@@ -2,8 +2,8 @@ public class Aims {
     public static void main(String[] args) {
         Cart cart = new Cart();
 
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("Action", "Movie 1", 15.99);
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Comedy", "Movie 2", 12.99);
+        DigitalVideoDisc dvd1 = new DigitalVideoDisc("Action", "Movie 1", 15.99f);
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Comedy", "Movie 2", 12.99f);
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Movie 3");
 
         cart.addDigitalVideoDisc(dvd1);
