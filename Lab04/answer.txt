@@ -1,0 +1,50 @@
+1. What class should implement the Comparable interface?
+The Media class should implement the Comparable interface since it is the parent class for all media types (e.g., Book, CompactDisc, DVD) and contains the common attributes (title, cost) used for comparison.
+
+2. How should you implement the compareTo() method?
+To implement the compareTo() method in the Media class:
+
+The primary ordering is by title (alphabetical).
+If two items have the same title, compare by cost (descending).
+
+
+1. What class should implement the Comparable interface?
+The Media class should implement the Comparable interface since it is the parent class for all media types (e.g., Book, CompactDisc, DVD) and contains the common attributes (title, cost) used for comparison.
+
+2. How should you implement the compareTo() method?
+To implement the compareTo() method in the Media class:
+
+The primary ordering is by title (alphabetical).
+If two items have the same title, compare by cost (descending).
+Here’s the implementation:
+
+java
+Copy code
+@Override
+public int compareTo(Media other) {
+    // Compare by title
+    int titleComparison = this.title.compareToIgnoreCase(other.title);
+    if (titleComparison != 0) {
+        return titleComparison;
+    }
+
+    // If titles are the same, compare by cost (descending)
+    return Float.compare(other.cost, this.cost);
+}
+3. Can we have two ordering rules (e.g., by title then cost, and by cost then title) with Comparable?
+No, the Comparable interface only allows one natural ordering defined by the compareTo() method. To have multiple ordering rules, we would need to use the Comparator interface for flexibility.
+
+For example:
+
+Media.COMPARE_BY_TITLE_COST for ordering by title, then cost.
+Media.COMPARE_BY_COST_TITLE for ordering by cost, then title.
+Using Comparable locks the sorting behavior into a single rule.
+
+4. How to handle DVDs with a different ordering rule?
+If DVD has a unique ordering (by title, then decreasing length, then cost), you can override the compareTo() method in the DVD class:
+
+5. Summary of Advantages and Limitations
+Approach	Pros	Cons
+Comparable	- Simple for defining one natural order.	- Limited to one ordering rule.
+Comparator	- Allows multiple, flexible ordering rules.	- Requires separate comparator objects.
+For complex sorting requirements like the ones described, using Comparator would generally be a better choice.

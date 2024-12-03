@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="hust/soict/hedspi/aims/cart/" kind="src" path="AimsProject/src"/>
+	<classpathentry kind="src" path="OtherProjects/Lab01/Source"/>
+	<classpathentry kind="src" path="OtherProjects/Lab02/src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
