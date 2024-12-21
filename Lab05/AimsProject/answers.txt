@@ -1,0 +1,34 @@
+- What class should implement the Comparable interface?
+=>  Media, Track, DigitalVideoDisc, CompactDisc, Book are the classes that should implement the Comparable interface.
+
+- In those classes, how should you implement the compareTo() method to reflect the ordering that we want?
+=> We will check the arguments based on the priority of the arguments.
+
+- Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this Comparable interface approach?
+=> Since the Comparable interface only uses one comparison, we can not have two ordering rules of the item.
+
+- Suppose the DVDs have a different ordering rule from the other media types, that is by title, then decreasing length, then cost. How would you modify your code to allow this?
+=>
+public class Media implements Comparable<Media> {
+@Override
+public int compareTo (Media other) {
+if (this instanceof DVD && other instanceof DVD) {
+int titleComparison = this.getTitle().compareTo(other.getTitle());
+if (titleComparison != 0) {
+return titleComparison;
+}
+int lengthComparison = Integer.compare(other.getLength(), this.getLength());
+if (lengthComparison != 0) {
+return lengthComparison;
+}
+return Float.compare(this.getCost(), other.getCost());
+}
+else {
+// Default comparison for other media types
+}
+return 0; // Objects are equal
+}
+}
+
+
+Đây là Lab cuối cùng của phần thực hành rồi, em cảm ơn anh Tùng nhiều ạ!
